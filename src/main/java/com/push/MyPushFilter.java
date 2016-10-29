@@ -29,17 +29,18 @@ public final class MyPushFilter implements Filter {
 		String uri = httpRequest.getRequestURI();
 		String fileName = uri.substring(uri.lastIndexOf('/') + 1, uri.length());
 		System.out.println("Switch uri is " + fileName);
-		switch (fileName) {
-		case "index.html":
-			System.out.println("de case is index.html");
-			PushBuilder pushBuilder = Request.getBaseRequest(request).getPushBuilder();
-			Request r = Request.getBaseRequest(request);
-			System.out.println(r);
-			System.out.println(r.getPushBuilder());
-			pushBuilder.path("images/34.png").push();
-			break;
-		default:
-			break;
+		// implement a basic push implementation here
+//		switch (fileName) {
+//		case "index.html":
+//			System.out.println("de case is index.html");
+//			PushBuilder pushBuilder = Request.getBaseRequest(request).getPushBuilder();
+//			Request r = Request.getBaseRequest(request);
+//			System.out.println(r);
+//			System.out.println(r.getPushBuilder());
+//			pushBuilder.path("images/34.png").push();
+//			break;
+//		default:
+//			break;
 
 		}
 		// pass the request along the filter chain
