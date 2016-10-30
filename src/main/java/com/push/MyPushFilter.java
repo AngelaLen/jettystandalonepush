@@ -41,8 +41,8 @@ public final class MyPushFilter implements Filter {
 //			break;
 //		default:
 //			break;
-
-		}
+//
+//	}
 		// pass the request along the filter chain
 		chain.doFilter(request, response);
 	}
