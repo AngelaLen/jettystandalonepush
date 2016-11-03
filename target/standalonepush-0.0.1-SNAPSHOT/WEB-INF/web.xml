@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	<display-name>standalonepush</display-name>
+	<context-param>
+		<param-name>org.eclipse.jetty.server.context.ManagedAttributes</param-name>
+		<param-value>push</param-value>
+	</context-param>
+
+	<filter>
+		<filter-name>push</filter-name>
+		<filter-class>com.push.MyPushFilter</filter-class>
+		<init-param>
+			<param-name>ports</param-name>
+			<param-value>8443</param-value>
+		</init-param>
+		<init-param>
+			<param-name>maxAssociations</param-name>
+			<param-value>32</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>push</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<!-- <servlet>
+		<description></description>
+		<display-name>basicservlet</display-name>
+		<servlet-name>basicservlet</servlet-name>
+		<servlet-class>com.push.basicservlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>basicservlet</servlet-name>
+		<url-pattern>/basicservlet</url-pattern>
+	</servlet-mapping> -->
+</web-app>
+
+
+
+
+
+<!--  https://webtide.com/introduction-to-http2-in-jetty/ -->
