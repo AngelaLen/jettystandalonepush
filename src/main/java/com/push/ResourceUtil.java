@@ -17,15 +17,32 @@ import com.google.common.io.Files;
 
 public class ResourceUtil {
 
-	public static List<String> getHtmlImgReferences(String fileName) throws IOException {
+	public static List<String> getHtmlReferences() throws IOException {
+
+		// put requested webapp file in a string so that Jsoup can parse it
+		String content = Files.toString(new File("webapps/standalonepush/index.html"), Charsets.UTF_8);
+
+		Document doc = Jsoup.parseBodyFragment(content);
+		Elements media = doc.select("img[src]");
+		
+		//Add all the elements in a list so we can return this to te 
+		List<String> results = new ArrayList<String>();
+		for (Element src : media) {
+			results.add(src.attr("src"));
+		}
+		return results;
+
+	}
+	
+	public static List<String> getHtmlReferences(String fileName) throws IOException {
 
 		// put requested webapp file in a string so that Jsoup can parse it
 		String content = Files.toString(new File("webapps/standalonepush/"+fileName), Charsets.UTF_8);
 
 		Document doc = Jsoup.parseBodyFragment(content);
 		Elements media = doc.select("img[src]");
-
-		// Add all the elements in a list so we can return this
+		
+		//Add all the elements in a list so we can return this to te 
 		List<String> results = new ArrayList<String>();
 		for (Element src : media) {
 			results.add(src.attr("src"));
