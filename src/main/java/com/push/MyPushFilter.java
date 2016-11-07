@@ -35,7 +35,7 @@ public final class MyPushFilter implements Filter {
 		// implement a basic push implementation here
 		switch (fileName) {
 		case "index.html":
-			List<String> resourcesToPush = ResourceUtil.getHtmlReferences(fileName);
+			List<String> resourcesToPush = ResourceUtil.getHtmlImgReferences(fileName);
 			PushBuilder pushBuilder = Request.getBaseRequest(request).getPushBuilder();
 			
 			for (String resource : resourcesToPush) {
