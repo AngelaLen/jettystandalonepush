@@ -41,13 +41,15 @@ public final class MyPushFilter implements Filter {
 		switch (fileName) {
 		case "index.html":
 
-			List<String> resourcesToPush = ResourceUtil.getHtmlImgReferences(fileName);
+			// test: push only the css files
+
 			PushBuilder pushBuilder = Request.getBaseRequest(request).getPushBuilder();
+			pushBuilder.path("js-image-slider.css").push();
+			pushBuilder.path("Layout.css").push();
+			pushBuilder.path("Layout2.css").push();
+			pushBuilder.path("Layout3.css").push();
+			pushBuilder.path("Layout4.css").push();
 
-			for (String resource : resourcesToPush) {
-				pushBuilder.path(resource).push();
-
-			}
 			break;
 		default:
 			break;
