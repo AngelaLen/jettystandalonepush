@@ -44,7 +44,7 @@ public final class MyPushFilter implements Filter {
 			// test: push only the css files
 
 			PushBuilder pushBuilder = Request.getBaseRequest(request).getPushBuilder();
-			pushBuilder.path("js-image-slider.css").push();
+			pushBuilder.path("js-images.css").push();
 			pushBuilder.path("Layout.css").push();
 			pushBuilder.path("Layout2.css").push();
 			pushBuilder.path("Layout3.css").push();
