@@ -1,31 +1,26 @@
-.container {
-	max-width: 400px;
-	background-color: black;
-	margin: 0 auto;
-	text-align: center;
+#slides {
 	position: relative;
+	height: 300px;
+	padding: 0px;
+	margin: 0px;
+	list-style-type: none;
 }
 
-.container div {
-	background-color: white;
-	width: 100%;
-	display: inline-block;
-	display: none;
-}
-
-.container img {
-	width: 100%;
-	height: auto;
-}
-
-button {
+.slide {
 	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	z-index: 1;
+	-webkit-transition: opacity 1s;
+	-moz-transition: opacity 1s;
+	-o-transition: opacity 1s;
+	transition: opacity 1s;
 }
 
-.next {
-	right: 5px;
-}
-
-.prev {
-	left: 5px;
+.showing {
+	opacity: 1;
+	z-index: 2;
 }

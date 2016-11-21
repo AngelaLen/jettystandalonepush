@@ -22,11 +22,6 @@ public final class MyPushFilter implements Filter {
 
 		HttpServletResponse res = (HttpServletResponse) response;
 
-		// optional no caching options for use with automated browser testing
-		// res.setHeader("Cache-Control", "no-cache, no-store,must-revalidate");
-		// res.setHeader("Pragma", "no-cache");
-		// res.setHeader("Expires", "0");
-
 		// if http/1.1 then return. HTTP/2 is running only on secure ports.
 		if (request.isSecure() == false) {
 			chain.doFilter(request, res);
@@ -44,6 +39,7 @@ public final class MyPushFilter implements Filter {
 			// test: push only the css files
 
 			PushBuilder pushBuilder = Request.getBaseRequest(request).getPushBuilder();
+			pushBuilder.path("js-images.js").push();
 			pushBuilder.path("js-images.css").push();
 			pushBuilder.path("Layout.css").push();
 			pushBuilder.path("Layout2.css").push();
