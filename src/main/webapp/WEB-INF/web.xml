@@ -27,14 +27,4 @@
 		<url-pattern>/index.html</url-pattern>
 	</filter-mapping>
 
-	<!-- <servlet> <description></description> <display-name>basicservlet</display-name> 
-		<servlet-name>basicservlet</servlet-name> <servlet-class>com.push.basicservlet</servlet-class> 
-		</servlet> <servlet-mapping> <servlet-name>basicservlet</servlet-name> <url-pattern>/basicservlet</url-pattern> 
-		</servlet-mapping> -->
 </web-app>
-
-
-
-
-
-<!-- https://webtide.com/introduction-to-http2-in-jetty/ -->

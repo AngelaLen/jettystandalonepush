@@ -42,9 +42,6 @@ public final class MyPushFilter implements Filter {
 			pushBuilder.path("js-images.js").push();
 			pushBuilder.path("js-images.css").push();
 			pushBuilder.path("Layout.css").push();
-			pushBuilder.path("Layout2.css").push();
-			pushBuilder.path("Layout3.css").push();
-			pushBuilder.path("Layout4.css").push();
 
 			break;
 		default:
