@@ -448,7 +448,7 @@
 		top: 9px;
 		left: 14px;
 		display: block;
-		background: url('../assets/img/svg/ico-orientation.svg') no-repeat;
+		background: url('http://www.hema.nl/assets/img/svg/ico-orientation.svg') no-repeat;
 	}
 
 .selectric .label {
@@ -1328,7 +1328,7 @@
 .ico-plus {
 	width: 25px;
 	height: 25px;
-	background-image: url(../assets/img/svg/ico-plus.svg);
+	background-image: url(http://www.hema.nl/assets/img/svg/ico-plus.svg);
 }
 
 .btn.large .ico-plus {

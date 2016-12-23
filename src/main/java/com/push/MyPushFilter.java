@@ -20,6 +20,7 @@ public final class MyPushFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 
+	
 		HttpServletResponse res = (HttpServletResponse) response;
 
 		// if http/1.1 then return. HTTP/2 is running only on secure ports.
@@ -39,31 +40,10 @@ public final class MyPushFilter implements Filter {
 			// test: push only the css files
 
 			PushBuilder pushBuilder = Request.getBaseRequest(request).getPushBuilder();
-//			pushBuilder.path("www.hema.nl/assets/scripts/hema.js").push();
-//			pushBuilder.path("www.hema.nl/assets/scripts/libs/autofill-event.js").push();
-//			pushBuilder.path("www.hema.nl/assets/scripts/libs/jquery.ba-dotimeout.min.js").push();
-//			pushBuilder.path("www.hema.nl/assets/scripts/libs/jquery.validate.min.js").push();
-//			
-//			pushBuilder.path("www.hema.nl/assets/scripts/libs/jquery.tmpl.js").push();
-//			pushBuilder.path("www.hema.nl/assets/scripts/libs/instagram.min.js").push();
-//			pushBuilder.path("www.hema.nl/assets/scripts/libs/jquery.selectric.min.js").push();
-//			pushBuilder.path("www.hema.nl/assets/scripts/libs/nouislider.min.js").push();
-//			pushBuilder.path("www.hema.nl/assets/scripts/libs/e-smart-zoom-jquery.min.js").push();
-//			
-//			pushBuilder.path("www.hema.nl/assets/scripts/libs/jquery.elevateZoom.min.js").push();
-//			pushBuilder.path("www.hema.nl/assets/scripts/libs/jquery.slick.min.js").push();
-//			pushBuilder.path("www.hema.nl/assets/scripts/libs/jquery.touch-swipe.min.js").push();
-//			pushBuilder.path("www.hema.nl/assets/scripts/libs/jquery-json.js").push();
-//			pushBuilder.path("www.hema.nl/assets/scripts/libs/jstorage-0.4.12.min.js").push();
-//			
-//			
-//			pushBuilder.path("www.hema.nl/assets/scripts/libs/detectizr.min.js").push();
-//			pushBuilder.path("www.hema.nl/assets/scripts/libs/modernizr.js").push();
-//			pushBuilder.path("www.hema.nl/assets/scripts/libs/jquery-1.11.2.min.js").push();
 			
-//			pushBuilder.path("Controls/Navigation/NewsletterSubscription.html").push();
-//			pushBuilder.path("assets/css/custom.css").push();
-//			pushBuilder.path("assets/css/style.css").push();
+		//pushBuilder.path("Controls/Navigation/NewsletterSubscription.html").push();
+		pushBuilder.path("assets/css/custom.css").push();
+		pushBuilder.path("assets/css/style.css").push();
 		
 
 			break;
@@ -73,7 +53,9 @@ public final class MyPushFilter implements Filter {
 		}
 
 		// pass the request along the filter chain
-		chain.doFilter(request, res);
+		if (!fileName.contains("custom.css")) {
+			chain.doFilter(request, res);
+		}
 	}
 
 	public void destroy() {
