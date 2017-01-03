@@ -40,7 +40,6 @@ public final class MyPushFilter implements Filter {
 
 			PushBuilder pushBuilder = Request.getBaseRequest(request).getPushBuilder();
 
-			pushBuilder.path("Controls/Navigation/NewsletterSubscription.html").push();
 			pushBuilder.path("assets/css/custom.css").push();
 			pushBuilder.path("assets/css/style.css").push();
 
@@ -50,19 +49,28 @@ public final class MyPushFilter implements Filter {
 			pushBuilder.path("assets/scripts/libs/instagram.min.js").push();
 			pushBuilder.path("assets/scripts/libs/jquery.ba-dotimeout.min.js").push();
 			pushBuilder.path("assets/scripts/libs/jquery-1.11.2.min.js").push();
+			pushBuilder.path("assets/scripts/libs/modernizer.js").push();
+			
+			pushBuilder.path("assets/scripts/libs/jstorage-0.4.12.min.js").push();
+			pushBuilder.path("assets/scripts/libs/jquery-json.js").push();
+			pushBuilder.path("assets/scripts/libs/jquery.touch-swipe.min.js").push();
+			
+			pushBuilder.path("assets/scripts/libs/nouislider.min.js").push();
+			pushBuilder.path("assets/scripts/libs/jquery.elevateZoom.min.js").push();
+			pushBuilder.path("assets/scripts/libs/nouislider.min.js").push();
+			pushBuilder.path("assets/scripts/libs/jquery.slick.min.js").push();
+			
+			pushBuilder.path("assets/scripts/libs/jquery.selectric.min.js").push();
+			pushBuilder.path("assets/scripts/libs/jquery.tmpl.js").push();
+			
+			pushBuilder.path("assets/scripts/hema.js").push();
+			pushBuilder.path("assets/scripts/libs/typeahead.bundle.min.js").push();
+			
+			
+			pushBuilder.path("assets/scripts/hema.js").push();
+			pushBuilder.path("assets/scripts/libs/typeahead.bundle.min.js").push();
 
-			// pushBuilder.path("assets/img/loader.gif").push();
-			// pushBuilder.path("assets/img/flags-sprite.svg").push();
-			// pushBuilder.path("assets/img/loader@2x.gif").push();
-			// pushBuilder.path("assets/img/logo.jpg").push();
-			// pushBuilder.path("assets/img/no-image.png").push();
-			pushBuilder.path("assets/img/sprite.svg").push();
-			//
-			// pushBuilder.path("assets/img/svg/ico-arrow-grey.svg").push();
-			// pushBuilder.path("assets/img/svg/ico-back-top.svg").push();
-			// pushBuilder.path("assets/img/svg/ico-heart-outline-grey-large.svg").push();
-			// pushBuilder.path("assets/img/svg/ico-heart-red.svg").push();
-
+		
 			break;
 		default:
 			break;
