@@ -49,7 +49,7 @@ public final class MyPushFilter implements Filter {
 			pushBuilder.path("assets/scripts/libs/instagram.min.js").push();
 			pushBuilder.path("assets/scripts/libs/jquery.ba-dotimeout.min.js").push();
 			pushBuilder.path("assets/scripts/libs/jquery-1.11.2.min.js").push();
-			pushBuilder.path("assets/scripts/libs/modernizer.js").push();
+			pushBuilder.path("assets/scripts/libs/modernizr.js").push();
 			
 			pushBuilder.path("assets/scripts/libs/jstorage-0.4.12.min.js").push();
 			pushBuilder.path("assets/scripts/libs/jquery-json.js").push();
@@ -65,10 +65,9 @@ public final class MyPushFilter implements Filter {
 			
 			pushBuilder.path("assets/scripts/hema.js").push();
 			pushBuilder.path("assets/scripts/libs/typeahead.bundle.min.js").push();
-			
+			pushBuilder.path("assets/scripts/libs/jquery.validate.min.js").push();
 			
 			pushBuilder.path("assets/scripts/hema.js").push();
-			pushBuilder.path("assets/scripts/libs/typeahead.bundle.min.js").push();
 
 		
 			break;
