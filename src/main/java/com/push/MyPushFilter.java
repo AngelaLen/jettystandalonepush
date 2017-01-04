@@ -48,29 +48,30 @@ public final class MyPushFilter implements Filter {
 			pushBuilder.path("assets/scripts/libs/e-smart-zoom-jquery.min.js").push();
 			pushBuilder.path("assets/scripts/libs/instagram.min.js").push();
 			pushBuilder.path("assets/scripts/libs/jquery.ba-dotimeout.min.js").push();
-			pushBuilder.path("assets/scripts/libs/jquery-1.11.2.min.js").push();
+
 			pushBuilder.path("assets/scripts/libs/modernizr.js").push();
-			
+
 			pushBuilder.path("assets/scripts/libs/jstorage-0.4.12.min.js").push();
 			pushBuilder.path("assets/scripts/libs/jquery-json.js").push();
 			pushBuilder.path("assets/scripts/libs/jquery.touch-swipe.min.js").push();
-			
+
 			pushBuilder.path("assets/scripts/libs/nouislider.min.js").push();
 			pushBuilder.path("assets/scripts/libs/jquery.elevateZoom.min.js").push();
 			pushBuilder.path("assets/scripts/libs/nouislider.min.js").push();
 			pushBuilder.path("assets/scripts/libs/jquery.slick.min.js").push();
-			
+
 			pushBuilder.path("assets/scripts/libs/jquery.selectric.min.js").push();
 			pushBuilder.path("assets/scripts/libs/jquery.tmpl.js").push();
-			
+
 			pushBuilder.path("assets/scripts/hema.js").push();
 			pushBuilder.path("assets/scripts/libs/typeahead.bundle.min.js").push();
 			pushBuilder.path("assets/scripts/libs/jquery.validate.min.js").push();
-			
-			pushBuilder.path("assets/scripts/hema.js").push();
 
-		
 			break;
+		case "NewsletterSubscription.html":
+			PushBuilder pushBuilder2 = Request.getBaseRequest(request).getPushBuilder();
+			pushBuilder2.path("assets/scripts/libs/jquery-1.11.2.min.js").push();
+			pushBuilder2.path("assets/scripts/main/newsletter.js").push();
 		default:
 			break;
 
