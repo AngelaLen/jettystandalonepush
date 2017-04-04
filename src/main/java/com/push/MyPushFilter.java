@@ -20,37 +20,11 @@ public final class MyPushFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 
-		HttpServletResponse res = (HttpServletResponse) response;
+		PushBuilder pushBuilder = Request.getBaseRequest(request).getPushBuilder();
+		pushBuilder.path("js-images.css").push();
+		pushBuilder.path("Layout.css").push();
 
-		// if http/1.1 then return. HTTP/2 is running only on secure ports.
-		if (request.isSecure() == false) {
-			chain.doFilter(request, res);
-			return;
-		}
-
-		HttpServletRequest httpRequest = (HttpServletRequest) request;
-		String uri = httpRequest.getRequestURI();
-		String fileName = uri.substring(uri.lastIndexOf('/') + 1, uri.length());
-
-		// implement a basic push implementation here
-		switch (fileName) {
-		case "index.html":
-
-			// test: push only the css files
-
-			PushBuilder pushBuilder = Request.getBaseRequest(request).getPushBuilder();
-			pushBuilder.path("js-images.js").push();
-			pushBuilder.path("js-images.css").push();
-			pushBuilder.path("Layout.css").push();
-
-			break;
-		default:
-			break;
-
-		}
-
-		// pass the request along the filter chain
-		chain.doFilter(request, res);
+		chain.doFilter(request, response);
 	}
 
 	public void destroy() {
